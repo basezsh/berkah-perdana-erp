@@ -1,9 +1,7 @@
-plugins {
-    id 'com.android.application'
-}
+apply plugin: 'com.android.application'
 
 android {
-    namespace 'com.berkah.erp'
+    namespace "com.berkah.erp"
     compileSdk 35
 
     defaultConfig {
@@ -18,11 +16,6 @@ android {
         release {
             minifyEnabled false
         }
-    }
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
     }
 }
 
