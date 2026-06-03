@@ -1,3 +1,10 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+set -e
+
+mkdir -p .github/workflows
+
+cat > .github/workflows/android.yml <<'EOF'
 name: Android Build
 
 on:
@@ -26,3 +33,11 @@ jobs:
         with:
           name: test-apk
           path: release/test.apk
+EOF
+
+git add .
+git commit --allow-empty -m "codebuild $(date +%s)"
+git push
+
+echo
+echo "DONE - check GitHub Actions artifact test-apk"
